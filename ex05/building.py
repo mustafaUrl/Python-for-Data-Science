@@ -4,8 +4,10 @@ def take_input() -> str:
     '''
     Taking input when len(argv) is one
     '''
-    ret = input("What is the text to count?")
+    #ret = input()
     #print(ret)
+    print("What is the text to count?")
+    ret = sys.stdin.read()
     return ret
 
 def print_values(ctrl):
@@ -21,7 +23,7 @@ def print_values(ctrl):
             lowerCount += 1
         elif elem in """!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~""":
             puncCount += 1
-        elif elem.isspace():
+        elif elem.isspace() or elem == '\r':
             spacesCount += 1
         elif elem.isdigit():
             digitsCount += 1
