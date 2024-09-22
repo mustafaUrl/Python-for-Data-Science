@@ -1,7 +1,7 @@
 import sys
 
 
-def isNum(num):
+def isNum(num) -> bool:
     if num == "" or num == "''" or not len(num):
         return False
     lst = list(num)
