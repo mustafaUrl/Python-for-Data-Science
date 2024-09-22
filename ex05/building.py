@@ -1,21 +1,22 @@
 import sys
 
+
 def take_input() -> str:
     '''
     Taking input when len(argv) is one
     '''
-    #ret = input()
-    #print(ret)
     print("What is the text to count?")
     ret = sys.stdin.read()
+    print("")
     return ret
+
 
 def print_values(ctrl):
     '''
     Printing values for output
     '''
     print(f"The text contains {len(ctrl)} characters:")
-    upperCount,lowerCount, puncCount, spacesCount, digitsCount = 0,0,0,0,0
+    upperCount, lowerCount, puncCount, spacesCount, digitsCount = 0, 0, 0, 0, 0
     for elem in ctrl:
         if elem.isupper():
             upperCount += 1
@@ -44,7 +45,6 @@ def main():
         print(args, "*", len(args))
         ctrl = ""
         if len(args) > 2:
-            #assert len(args) > 2, "more than one argument is provided"
             raise AssertionError("more than one argument is provided")
         elif len(args) == 1:
             ctrl = take_input()
@@ -53,6 +53,7 @@ def main():
         print_values(ctrl=ctrl)
     except AssertionError as ex:
         print("AssertionError:", ex)
+
 
 if __name__ == "__main__":
     main()

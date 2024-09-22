@@ -3,3 +3,5 @@ ex03 empty ekstra boşluklu yazdırıyor
 tester.py'leri silmeyi unutma
 
 ex04'de py whatis.py '' ile py whatis.py "" ' li kontrol lazim!!!!!!!!!!!
+
+ex05 take input altina print koydum input aldiktan sonra alt satira gecsin diye dogru mu kontrol lazim
