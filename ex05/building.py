@@ -1,25 +1,17 @@
 import sys
 
 def take_input() -> str:
-    ret = input("What is the text to count?\n")
+    '''
+    Taking input when len(argv) is one
+    '''
+    ret = input("What is the text to count?")
     #print(ret)
     return ret
 
-
-def main():
-    """
-    Main Function
-    """
-    args = sys.argv
-    print(args, "*", len(args))
-    ctrl = ""
-    if len(args) > 2:
-        assert len(args) > 1, "more than one argument is provided"
-    elif len(args) == 1:
-        ctrl = take_input()
-    else:
-        ctrl = args[1]
-    
+def print_values(ctrl):
+    '''
+    Printing values for output
+    '''
     print(f"The text contains {len(ctrl)} characters:")
     upperCount,lowerCount, puncCount, spacesCount, digitsCount = 0,0,0,0,0
     for elem in ctrl:
@@ -27,7 +19,7 @@ def main():
             upperCount += 1
         elif elem.islower():
             lowerCount += 1
-        elif elem in "!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~":
+        elif elem in """!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~""":
             puncCount += 1
         elif elem.isspace():
             spacesCount += 1
@@ -39,8 +31,26 @@ def main():
     print(f"{puncCount} punctuation marks")
     print(f"{spacesCount} spaces")
     print(f"{digitsCount} digits")
-        
 
+
+def main():
+    """
+    Main Function
+    """
+    try:
+        args = sys.argv
+        print(args, "*", len(args))
+        ctrl = ""
+        if len(args) > 2:
+            #assert len(args) > 2, "more than one argument is provided"
+            raise AssertionError("more than one argument is provided")
+        elif len(args) == 1:
+            ctrl = take_input()
+        else:
+            ctrl = args[1]
+        print_values(ctrl=ctrl)
+    except AssertionError as ex:
+        print("AssertionError:", ex)
 
 if __name__ == "__main__":
     main()
