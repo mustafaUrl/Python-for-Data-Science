@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ft_package
+Version: 0.0.1
+Summary: A sample test package
+Author: stunca
+Author-email: stunca@student.42kocaeli.com.tr
+License: MIT
+Project-URL: homepage, https://github.com/bakwein/ft_package
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Example Package
+
+This is a simple example package. You can use
+[GitHub-flavored Markdown](...)
+to write your content.

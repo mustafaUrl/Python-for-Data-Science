@@ -1,3 +1,5 @@
+!!! python 0 starting'de req.txt dosyasını pushlama
+
 ex03 empty ekstra boşluklu yazdırıyor
 
 tester.py'leri silmeyi unutma
@@ -9,3 +11,11 @@ ex05 take input altina print koydum input aldiktan sonra alt satira gecsin diye 
 fonksiyonlar için doc olayını kontrol et
 
 ex06 lambda olayina bak!
+
+
+ex09 işlemler 42de en başından yapılmalı ki pathler ayarlansın - project url kismina bak belki 3.10'da farkli calisma ihtimali var
+
+pip install setuptools 
+python setup.py sdist bdist_wheel  
+pip install dist\ft_package-0.0.1-py3-none-any.whl
+pip show -v ft_package   
