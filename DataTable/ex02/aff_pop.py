@@ -1,24 +1,52 @@
+import pandas as pd
 from load_csv import load
 import matplotlib.pyplot as plt
 import numpy as np
 
-def main(country1: str, country2: str, file: str):
+def toNum(value):
+    if value.endswith('M'):
+        return float(value[:-1]) * 1_000_000  
+    elif value.endswith('k'):
+        return float(value[:-1]) * 1_000 
+    else:
+        return float(value)
 
-    data = load(file)
-    country1_data = data.loc[country1]
-    country2_data = data.loc[country2]
+def main():
+    df = load("../population_total.csv")
+    
+    # Processing data for Turkey
+    turkey = df.loc['Belgium']  # Assuming you meant 'Turkey' instead of 'Belgium'
+    turkey.index = turkey.index.astype(int)
+    turkey = turkey[(turkey.index >= 1800) & (turkey.index <= 2050)]
+    turkey = turkey.apply(toNum)
+    
+    # Processing data for France
+    france = df.loc['France']
+    france.index = france.index.astype(int)
+    france = france[(france.index >= 1800) & (france.index <= 2050)]
+    france = france.apply(toNum)
+    years = france.index
 
+    # Set labels and title
+    plt.xlabel("Year")
+    plt.ylabel("Population")
+    plt.title("Population Projections")
 
-    plt.xlabel('Population') 
-    plt.ylabel('Year')
-    plt.title('Population in ' + country1 + ' and ' + country2)
-    country_data.index = country_data.index.astype(int)
-    contry_data = country_data.astype(int)
-    plt.xticks(np.arange(min(country_data.index), max(country_data.index)+1, 40))
+    # Get the maximum population value from both countries
+    max_population = max(turkey.max(), france.max())
+    
+    # Define y-axis ticks, round the max_population to the nearest 20 million
+    y_max = np.ceil(max_population / 20_000_000) * 20_000_000
+    y_ticks = np.arange(0, y_max + 1, 20_000_000)
+    plt.yticks(y_ticks, [f"{int(i // 1_000_000)}M" for i in y_ticks])
 
-    plt.plot(country_data.index, country_data)
+    # Plot Turkey and France population data
+    plt.plot(years, turkey, label='Turkey')
+    plt.plot(years, france, label='France')
+    
+    # Display legend and plot
+    plt.legend()
     plt.show()
 
-
-if __name__ == '__main__':
-    main('Turkey','France','../life_expectancy_years.csv')
+if __name__ == "__main__":
+    main()
