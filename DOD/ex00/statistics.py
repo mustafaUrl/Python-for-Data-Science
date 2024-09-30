@@ -39,7 +39,7 @@ def ft_quartile(*args: float):
     sorted_data = sorted(float(arg) for arg in args)
     Q1 = percentile(sorted_data, 25)
     Q3 = percentile(sorted_data, 75)
-    return (Q1, Q3)
+    return [Q1, Q3]
 
 
 

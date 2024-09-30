@@ -39,5 +39,5 @@ class Lannister(Character):
 
     @staticmethod
     def create_lannister(first_name: str, is_alive: bool = True, family_name: str = "Lannister", eyes: str = "blue", hairs: str = "light"):
-        """Bir Lannister nesnesi oluşturur."""
+        """Create a Lannister character."""
         return Lannister(first_name, is_alive=is_alive, family_name=family_name, eyes=eyes, hairs=hairs)
