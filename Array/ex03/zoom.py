@@ -4,7 +4,7 @@ from PIL import Image
 
 
 def main():
-    
+    ''' This function will crop the image and convert it to grayscale using numpy '''
     img = ft_load("../animal.jpeg")
 
     # height, width = img.shape[:2]
