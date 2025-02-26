@@ -16,4 +16,5 @@ print("---")
 Jaine = Lannister.create_lannister("Jaine", True)
 print(Jaine.__dict__)
 print(Jaine)
-print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
+print(f"Name : {Jaine.first_name, type(Jaine).__name__},\
+        Alive : {Jaine.is_alive}")
