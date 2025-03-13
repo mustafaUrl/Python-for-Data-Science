@@ -3,6 +3,8 @@ import sys
 
 def isDigit(s):
     """ Check if the string is a digit """
+    if len(s) == 0:
+        return False
     if s[0] == "-" or s[0] == "+":
         s = s[1:]
     for i in s:

@@ -10,7 +10,7 @@ def building(args):
             upper_letters += 1
         elif j.islower():
             lower_letters += 1
-        elif j.isspace() or j == "\r" or j == "\r\n":
+        elif j.isspace():
             spaces += 1
         elif j.isdigit():
             digits += 1
@@ -62,18 +62,17 @@ def building(args):
 
 def main():
     """Main function"""
-    if len(sys.argv) < 2:
-        # text = input("What is the text to count?\n")
-        try:
-            text = sys.stdin.read()
-            print("What is the text to count?")
-        except KeyboardInterrupt:
-            sys.exit(1)
-    elif len(sys.argv) > 2:
-        raise ValueError("Too many arguments")
-    else:
-        text = sys.argv[1]
     try:
+        if len(sys.argv) < 2:
+            try:
+                print("What is the text to count?")
+                text = sys.stdin.read()
+            except KeyboardInterrupt:
+                sys.exit(1)
+        elif len(sys.argv) == 2:
+            text = sys.argv[1]
+        else:
+            raise ValueError("Too many arguments")
         building(text)
 
     except Exception as e:

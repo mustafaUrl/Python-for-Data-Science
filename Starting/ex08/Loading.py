@@ -15,11 +15,8 @@ def ft_tqdm(lst: range) -> None:
     bar_length = terminal_width - 30
     char = "█"
     for i in lst:
-        percent = (i + 1) / length * 100  # Calculate percentage
-        # Calculate filled part of the bar
+        percent = (i + 1) / length * 100
         filled_length = int(bar_length * percent // 100)
-        # Build the bar string
         bar = char * filled_length + ' ' * (bar_length - filled_length)
-        # Display progress bar with percentage
         print(f"{int(percent)}% | [{bar}>] | {i+1}/{length}", end="\r")
-        yield i  # Periodically yield values for the caller
+        yield i

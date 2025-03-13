@@ -67,7 +67,7 @@ def main():
         morse_message = ""
         for i in message:
             morse_message += GET_NESTED_MORSE(i) + " "
-            morse_message = morse_message[:-1]
+        morse_message = morse_message.strip()
         print(morse_message)
 
     except Exception as e:

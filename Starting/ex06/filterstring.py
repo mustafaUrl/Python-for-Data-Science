@@ -6,14 +6,13 @@ def main():
     '''Main function'''
     try:
         if len(sys.argv) != 3:
-            raise AssertionError("The arguments are bad")
+            raise AssertionError("the arguments are bad")
 
         try:
-            strVal = sys.argv[1].split(' ')  # Split input string into a list
+            strVal = sys.argv[1].split(' ')
             intVal = int(sys.argv[2])
         except ValueError:
-            raise AssertionError("The arguments are bad")
-        # Use a lambda function to filter based on the length condition
+            raise AssertionError("the arguments are bad")
         filtered = list(ft_filter(lambda item: len(item) > intVal, strVal))
         print(filtered)
 
