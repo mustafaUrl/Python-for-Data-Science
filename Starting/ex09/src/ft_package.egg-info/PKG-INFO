@@ -1,6 +1,6 @@
 Metadata-Version: 2.2
 Name: ft_package
-Version: 1.0.0
+Version: 0.0.1
 Summary: Muraler's ft_package
 Author: muraler
 Author-email: muraler@student.42kocaeli.com.tr
@@ -14,13 +14,6 @@ Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# Example Package
-
-This is a simple example package. You can use
-[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
-
-
-count_in_list(x)
+# count_in_list(x)
 
     Return the number of occurrences of x in the array.
