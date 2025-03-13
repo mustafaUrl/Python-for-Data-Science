@@ -1,4 +1,9 @@
 def all_thing_is_obj(object: any) -> int:
+    """
+    This function will print the type of the object passed in parameter
+    :param object: any
+    :return: int
+    """
     types = {list: "List", tuple: "Tuple", set: "Set", dict: "Dict"}
 
     if isinstance(object, str):

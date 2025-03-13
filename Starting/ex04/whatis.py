@@ -2,6 +2,7 @@ import sys
 
 
 def isDigit(s):
+    """ Check if the string is a digit """
     if s[0] == "-" or s[0] == "+":
         s = s[1:]
     for i in s:
@@ -12,7 +13,6 @@ def isDigit(s):
 
 try:
     phrase = (sys.argv)
-    print(len(phrase))
     if len(phrase) > 2:
         raise AssertionError("more than one argument is provided")
     if len(phrase) != 2:

@@ -1,11 +1,17 @@
 def NULL_not_found(object: any) -> int:
+    """
+    Function that checks if the object is NULL or not
+    :param object: any
+    :return: int
+    """
     types = {float: "Cheese: nan", int: "Zero: 0",
              str: "Empty:", bool: "Fake: False"}
 
     check = {float: float("NaN"), int: 0, str: "", bool: False}
-    if isinstance(object, None):
+
+    if type(object) is type(None):
         print(f"Nothing : None {type(object)}")
-    elif isinstance(object, float) and object is not object:  # NaN kontrolü
+    elif type(object) is float and object != object:
         print(f"{types.get(float)} {type(object)}")
     elif types.get(type(object)) is not None and \
             object == check.get(type(object)):

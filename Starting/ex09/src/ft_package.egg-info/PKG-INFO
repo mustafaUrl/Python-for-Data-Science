@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: ft_package
+Version: 1.0.0
+Summary: Muraler's ft_package
+Author: muraler
+Author-email: muraler@student.42kocaeli.com.tr
+License: MIT
+Project-URL: homepage, https://github.com/mustafaUrl/Python-for-Data-Science
+Keywords: count_in_list,ft_package
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Example Package
+
+This is a simple example package. You can use
+[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+to write your content.
+
+
+count_in_list(x)
+
+    Return the number of occurrences of x in the array.

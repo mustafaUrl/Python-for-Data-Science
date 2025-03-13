@@ -66,7 +66,8 @@ def main():
             raise AssertionError("the arguments are bad")
         morse_message = ""
         for i in message:
-            morse_message += GET_NESTED_MORSE(i)
+            morse_message += GET_NESTED_MORSE(i) + " "
+            morse_message = morse_message[:-1]
         print(morse_message)
 
     except Exception as e:
@@ -75,5 +76,6 @@ def main():
 
 
 if __name__ == "__main__":
+    """Run the main function"""
     main()
     sys.exit(0)

@@ -1,5 +1,3 @@
-# Example Package
+# count_in_list(x)
 
-This is a simple example package. You can use
-[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+    Return the number of occurrences of x in the array.
